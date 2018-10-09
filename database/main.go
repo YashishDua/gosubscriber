@@ -2,8 +2,8 @@ package database
 
 import (
 	"github.com/go-pg/pg"
+	SubscriberModel "github.com/gosubscriber/model"
 	"log"
-	SubscriberModel "../model"
 )
 
 func Connect() *pg.DB {

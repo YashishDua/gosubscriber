@@ -1,8 +1,8 @@
 package model
 
 import (
-	"github.com/go-pg/pg/orm"
 	"github.com/go-pg/pg"
+	"github.com/go-pg/pg/orm"
 	"log"
 )
 

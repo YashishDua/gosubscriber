@@ -1,0 +1,8 @@
+hash: 70117211d31d8e491d52d9195c64e0ac0f497d3425164fae10097e95a4325ac1
+updated: 2018-10-09T21:01:44.883566+05:30
+imports:
+- name: github.com/go-pg/pg
+  version: 514bed76d8f579d6ff8d40294fa77e476a5c1b3f
+- name: github.com/gorilla/mux
+  version: e3702bed27f0d39777b0b37b664b6280e8ef8fbf
+testImports: []

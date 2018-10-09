@@ -1,7 +1,7 @@
 package main
 
 import (
-	endPoints "./rest"
+	endPoints "github.com/gosubscriber/api"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"

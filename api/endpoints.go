@@ -1,8 +1,8 @@
-package rest
+package api
 
 import (
-	db "../database"
-	"../model"
+	db "github.com/gosubscriber/database"
+	"github.com/gosubscriber/model"
 	"encoding/json"
 	"github.com/go-pg/pg"
 	"github.com/gorilla/mux"

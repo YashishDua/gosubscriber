@@ -1,8 +1,8 @@
 package model
 
 import (
-	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"
+	"gosubscriber/database"
 	"log"
 )
 
@@ -16,11 +16,11 @@ type Subscriber struct {
 	SubscriptionMail string `json:"subscription_mail" sql:"subscription_mail"`
 }
 
-func CreateSubscriberTable(db *pg.DB) error {
+func CreateSubscriberTable() error {
 	options := &orm.CreateTableOptions{
 		IfNotExists: true,
 	}
-	createTableError := db.CreateTable(&Subscriber{}, options)
+	createTableError := database.DB.CreateTable(&Subscriber{}, options)
 	if createTableError != nil {
 		log.Printf("Error in Creating Table")
 		return createTableError
@@ -29,26 +29,26 @@ func CreateSubscriberTable(db *pg.DB) error {
 	return nil
 }
 
-func (subItem* Subscriber) Add(db *pg.DB) error {
-	insertError := db.Insert(subItem)
+func (subItem* Subscriber) Add() error {
+	insertError := database.DB.Insert(subItem)
 	if insertError != nil {
 		return insertError
 	}
 	return nil
 }
 
-func GetAll(db *pg.DB) ([]Subscriber, error) {
+func GetAll() ([]Subscriber, error) {
 	var subs []Subscriber
-	_, err := db.Query(&subs, `SELECT * FROM subscriber`)
+	_, err := database.DB.Query(&subs, `SELECT * FROM subscriber`)
 	if err != nil {
 		return nil, err
 	}
 	return subs, nil
 }
 
-func Get(db *pg.DB, email string) (Subscriber, error) {
+func Get(email string) (Subscriber, error) {
 	var sub Subscriber
-	_, fetchError := db.QueryOne(&sub, `SELECT * FROM subscriber WHERE email = ?`, email)
+	_, fetchError := database.DB.QueryOne(&sub, `SELECT * FROM subscriber WHERE email = ?`, email)
 	if fetchError != nil {
 		return Subscriber{}, fetchError
 	}

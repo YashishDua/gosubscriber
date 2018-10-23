@@ -1,8 +1,24 @@
-hash: 70117211d31d8e491d52d9195c64e0ac0f497d3425164fae10097e95a4325ac1
-updated: 2018-10-09T21:01:44.883566+05:30
+hash: f51d7168a1bd74ade9846ecfb96213238e70f280511360e3223336cea64fd13e
+updated: 2018-10-15T00:42:31.394332+05:30
 imports:
 - name: github.com/go-pg/pg
   version: 514bed76d8f579d6ff8d40294fa77e476a5c1b3f
+  subpackages:
+  - internal
+  - internal/parser
+  - internal/pool
+  - orm
+  - types
+- name: github.com/gorilla/context
+  version: 51ce91d2eaddeca0ef29a71d766bb3634dadf729
 - name: github.com/gorilla/mux
   version: e3702bed27f0d39777b0b37b664b6280e8ef8fbf
+- name: github.com/jinzhu/inflection
+  version: 04140366298a54a039076d798123ffa108fff46c
+- name: github.com/vmihailenco/sasl
+  version: 2f13c189728a02f8cc31b3b9cc06047b383c21cc
+- name: golang.org/x/crypto
+  version: a92615f3c49003920a58dedcf32cf55022cefb8d
+  subpackages:
+  - pbkdf2
 testImports: []

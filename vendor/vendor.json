@@ -1,0 +1,71 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"path": "github.com/go-pg",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "5tE7UQuV3IGCgNFebogt3D+DVV4=",
+			"path": "github.com/go-pg/pg",
+			"revision": "8a46cd878cb38f299d1bf2ce29f1e32b4b8ab516",
+			"revisionTime": "2018-10-20T09:09:30Z"
+		},
+		{
+			"checksumSHA1": "+bp2eZex3wfZrUhBegHCQUL47UI=",
+			"path": "github.com/go-pg/pg/internal",
+			"revision": "8a46cd878cb38f299d1bf2ce29f1e32b4b8ab516",
+			"revisionTime": "2018-10-20T09:09:30Z"
+		},
+		{
+			"checksumSHA1": "N2FLzRX0WjaC3V8v72wbOLxmrzo=",
+			"path": "github.com/go-pg/pg/internal/parser",
+			"revision": "8a46cd878cb38f299d1bf2ce29f1e32b4b8ab516",
+			"revisionTime": "2018-10-20T09:09:30Z"
+		},
+		{
+			"checksumSHA1": "u0tniNGxlYrHKp7Gw0XwpeO80xA=",
+			"path": "github.com/go-pg/pg/internal/pool",
+			"revision": "8a46cd878cb38f299d1bf2ce29f1e32b4b8ab516",
+			"revisionTime": "2018-10-20T09:09:30Z"
+		},
+		{
+			"checksumSHA1": "L/Fr0KWJSIIcP49H5rtpFTlTbRc=",
+			"path": "github.com/go-pg/pg/orm",
+			"revision": "8a46cd878cb38f299d1bf2ce29f1e32b4b8ab516",
+			"revisionTime": "2018-10-20T09:09:30Z"
+		},
+		{
+			"checksumSHA1": "9jhs+ncNTbpV1LyoyaK2MRUojm0=",
+			"path": "github.com/go-pg/pg/types",
+			"revision": "8a46cd878cb38f299d1bf2ce29f1e32b4b8ab516",
+			"revisionTime": "2018-10-20T09:09:30Z"
+		},
+		{
+			"checksumSHA1": "FtCtcD/Ys18frKJyeZLzkPY6J8g=",
+			"path": "github.com/gorilla/mux",
+			"revision": "deb579d6e030503f430978ee229008b9bc912d40",
+			"revisionTime": "2018-10-12T15:31:51Z"
+		},
+		{
+			"checksumSHA1": "4eelJOSLZoDzLuaJvgilOBVNovU=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "04140366298a54a039076d798123ffa108fff46c",
+			"revisionTime": "2018-03-08T03:36:59Z"
+		},
+		{
+			"checksumSHA1": "1MGpGDQqnUoRpv7VEcQrXOBydXE=",
+			"path": "golang.org/x/crypto/pbkdf2",
+			"revision": "0c41d7ab0a0ee717d4590a44bcb987dfd9e183eb",
+			"revisionTime": "2018-10-15T00:23:17Z"
+		},
+		{
+			"checksumSHA1": "qRDbkjrz7ygCGk1+xJZe9WXUUR8=",
+			"path": "mellium.im/sasl",
+			"revision": "80f447d8107c05f712682c349a26e081488de60c",
+			"revisionTime": "2018-10-15T02:44:45Z"
+		}
+	],
+	"rootPath": "gosubscriber"
+}

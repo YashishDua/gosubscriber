@@ -36,6 +36,7 @@ var nullBoolType = reflect.TypeOf((*sql.NullBool)(nil)).Elem()
 var nullFloatType = reflect.TypeOf((*sql.NullFloat64)(nil)).Elem()
 var nullIntType = reflect.TypeOf((*sql.NullInt64)(nil)).Elem()
 var nullStringType = reflect.TypeOf((*sql.NullString)(nil)).Elem()
+var jsonRawMessageType = reflect.TypeOf((*json.RawMessage)(nil)).Elem()
 
 // Table represents a SQL table created from Go struct.
 type Table struct {
@@ -66,6 +67,9 @@ type Table struct {
 func (t *Table) setName(name types.Q) {
 	t.Name = name
 	t.NameForSelects = name
+	if t.Alias == "" {
+		t.Alias = name
+	}
 }
 
 func newTable(typ reflect.Type) *Table {
@@ -148,7 +152,6 @@ func (t *Table) mustSoftDelete() error {
 }
 
 func (t *Table) AddField(field *Field) {
-	t.allFields = append(t.allFields, field)
 	t.Fields = append(t.Fields, field)
 	if field.HasFlag(PrimaryKeyFlag) {
 		t.PKs = append(t.PKs, field)
@@ -255,7 +258,9 @@ func (t *Table) newField(f reflect.StructField, index []int) *Field {
 			return nil
 		}
 
-		if sqlTag.Name != "" {
+		if sqlTag.Name == "_" {
+			t.setName("")
+		} else if sqlTag.Name != "" {
 			s, _ := unquoteTagValue(sqlTag.Name)
 			t.setName(types.Q(quoteTableName(s)))
 		}
@@ -382,6 +387,7 @@ func (t *Table) newField(f reflect.StructField, index []int) *Field {
 	}
 	field.isZero = isZeroFunc(f.Type)
 
+	t.allFields = append(t.allFields, field)
 	if skip {
 		t.skippedFields = append(t.skippedFields, field)
 		t.FieldsMap[field.SQLName] = field
@@ -695,6 +701,8 @@ func sqlType(typ reflect.Type) string {
 		return "bigint"
 	case nullStringType:
 		return "text"
+	case jsonRawMessageType:
+		return "jsonb"
 	}
 
 	switch typ.Kind() {

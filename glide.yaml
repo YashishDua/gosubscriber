@@ -4,3 +4,4 @@ import:
   version: v6.15.0
 - package: github.com/gorilla/mux
   version: v1.6.2
+- package: github.com/vmihailenco/sasl
